@@ -18,6 +18,6 @@ public class CustomerService {
     public String createCustomer(CustomerRequest request){
         Customer customer = mapper.toEntity(request);
         repo.save(customer);
-        return "Customer Created!";
+        return "Customer Created Successfully";
     }
 }
