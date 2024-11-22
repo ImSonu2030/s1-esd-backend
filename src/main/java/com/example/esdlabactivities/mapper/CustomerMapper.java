@@ -1,5 +1,6 @@
 package com.example.esdlabactivities.mapper;
 
+import com.example.esdlabactivities.dto.CustomerResponse;
 import com.example.esdlabactivities.entity.Customer;
 import com.example.esdlabactivities.dto.CustomerRequest;
 import org.springframework.stereotype.Service;
@@ -15,5 +16,9 @@ public class CustomerMapper {
                 .email(request.email())
                 .password(request.password())
                 .build();
+    }
+
+    public CustomerResponse toCustomerResponse(Customer customer) {
+        return new CustomerResponse(customer.getFirstName(), customer.getLastName(), customer.getEmail());
     }
 }
