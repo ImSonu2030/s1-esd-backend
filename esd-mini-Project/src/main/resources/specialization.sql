@@ -1,0 +1,8 @@
+-- Insert into specializations table
+INSERT INTO specializations (specialization_code, specialization_name, specialization_description, specialization_year, credit_required) VALUES
+                                                                                                                                             ('IML', 'Artificial Intelligence & Machine Learning', 'Focuses on AI and ML techniques and applications.', 4, 120),
+                                                                                                                                             ('TCS', 'Theoretical Computer Science', 'Studies the theoretical foundations of computing.', 4, 120),
+                                                                                                                                             ('SSY', 'Software Systems', 'Specialization in software design, development, and architecture.', 4, 120),
+                                                                                                                                             ('NC', 'Networking and Communication', 'Covers topics on modern networking and communication systems.', 4, 120),
+                                                                                                                                             ('VLSI', 'VLSI Systems', 'Specialization in Very Large Scale Integration systems design.', 4, 120),
+                                                                                                                                             ('DT', 'Digital Society', 'Explores the impact and design of digital systems on society.', 4, 120);
