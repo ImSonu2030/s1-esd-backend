@@ -23,8 +23,10 @@ public class StudentService {
     private SpecializationRepo specializationRepository;
 
     public Students saveStudent(StudentReqDto dto) {
-        Domains domain = domainRepository.findById(dto.getDomainId())
-                .orElseThrow(() -> new RuntimeException("Invalid Domain ID: " + dto.getDomainId()));
+        Domains domain = domainRepository.findByProgramAndBatch(dto.getDomainName(), dto.getGraduationYear())
+                .orElseThrow(() -> new RuntimeException("Invalid Domain Name or Year: "
+                        + dto.getDomainName() + ", " + dto.getGraduationYear()));
+
         Specializations specialization = specializationRepository.findById(dto.getSpecializationId())
                 .orElseThrow(() -> new RuntimeException("Invalid Specialization ID: " + dto.getSpecializationId()));
 
@@ -49,7 +51,7 @@ public class StudentService {
 
     private String getProgramCode(String program) {
         if (program.contains("IMTech")) {
-            return "IM";
+            return "IMT";
         } else if (program.contains("MTech")) {
             return "MT";
         } else if (program.contains("BT")) {
@@ -59,4 +61,3 @@ public class StudentService {
         }
     }
 }
-

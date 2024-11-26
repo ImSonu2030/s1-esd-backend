@@ -23,7 +23,7 @@ public class StudentReqDto {
     private String graduationYear;
 
     @NotNull
-    private int domainId;
+    private String domainName;
 
     @NotNull
     private int specializationId;
